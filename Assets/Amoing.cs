@@ -9,7 +9,9 @@ public class Amoing : MonoBehaviour
     Vector3 right = new Vector3(2.0f, 0);
     Vector3 left = new Vector3(-1.0f, 0);
 
-    public Rigidbody FristRigidBody;
+    float speed = 10.0f;
+
+     Rigidbody FristRigidBody;
 
     public void Awake()
     {
@@ -19,23 +21,23 @@ public class Amoing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Rigidbody>();
+
     }
 
     // Update is called once per frame
     void FixeUpdate()
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
-            FristRigidBody.velocity += Vector3.forward;
+            FristRigidBody.velocity += Vector3.forward * speed;
 
         if (Input.GetKey(KeyCode.DownArrow))
-            FristRigidBody.velocity += Vector3.back;
+            FristRigidBody.velocity += Vector3.back * speed;
 
         if (Input.GetKey(KeyCode.RightArrow))
-            FristRigidBody.velocity += Vector3.right;
+            FristRigidBody.velocity += Vector3.right * speed;
 
         if (Input.GetKey(KeyCode.LeftArrow))
-            FristRigidBody.velocity += Vector3.left;
+            FristRigidBody.velocity += Vector3.left * speed;
     }
 }
 
