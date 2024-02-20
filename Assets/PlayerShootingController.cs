@@ -7,25 +7,29 @@ public class shot : MonoBehaviour
     [SerializeField] private GameObject m_bullet;
     [SerializeField] private float m_shootingRate;
 
+    private PauseController m_pauseController;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        m_pauseController = FindObjectOfType<PauseController>();
     }
 
     // Update is called once per frame
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (!m_pauseController.IsPaused)
         {
-            InvokeRepeating("Shoot", 0.0f, m_shootingRate);
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                InvokeRepeating("Shoot", 0.0f, m_shootingRate);
+            }
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                CancelInvoke();
+            }
         }
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            CancelInvoke();
-        }
-
     }
 
     private void Shoot()
