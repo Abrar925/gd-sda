@@ -6,6 +6,7 @@ public class shot : MonoBehaviour
 {
     [SerializeField] private GameObject m_bullet;
     [SerializeField] private float m_shootingRate;
+    [SerializeField] private float m_bulletSpeed;
 
     private PauseController m_pauseController;
 
@@ -34,7 +35,8 @@ public class shot : MonoBehaviour
 
     private void Shoot()
     {
-        Instantiate(m_bullet, GetComponent<Transform>().position, Quaternion.identity);
+        GameObject newBullet = Instantiate(m_bullet, GetComponent<Transform>().position, Quaternion.identity);
+        newBullet.GetComponent<BulletController>().Init(m_bulletSpeed);
     }
 
 }
