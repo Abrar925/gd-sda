@@ -10,7 +10,22 @@ public class EnemyShootingController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("Shoot", 0.0f, m_data.ShootingRate);
+        StartCoroutine(ShootingCoroutine());
+    }
+
+    private IEnumerator ShootingCoroutine()
+    {
+        while (true)
+        {
+            for (int i = 0; i <3; i++)
+            {
+                Shoot();
+                yield return new WaitForSeconds(0.3f);
+            }
+
+            
+            yield return new WaitForSeconds(m_data.ShootingRate);
+        }
     }
 
     private void Shoot()

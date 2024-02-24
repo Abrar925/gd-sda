@@ -6,21 +6,43 @@ public class EnemyController : MonoBehaviour
 {
     private ScoreCounter m_scoreCounter;
 
-    [SerializeField] private EnemyData m_data;
-
-
-    int m_health;
 
     // Start is called before the first frame update
     void Start()
     {
-        
         m_scoreCounter = FindObjectOfType<ScoreCounter>();
+        StartCoroutine(MovementCoroutine());
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator MovementCoroutine()
     {
+        Rigidbody rb = GetComponent<Rigidbody>();
+        while (true)
+        {
+            for (int i = 0; i < 200; i++)
+            {
+                rb.velocity = Vector3.up;
+                yield return new WaitForFixedUpdate();
+            }
+
+            for (int i = 0; i < 200; i++)
+            {
+                rb.velocity = Vector3.zero;
+                yield return new WaitForFixedUpdate();
+            }
+
+            for (int i = 0; i < 200; i++)
+            {
+                rb.velocity = Vector3.down;
+                yield return new WaitForFixedUpdate();
+            }
+
+            for (int i = 0; i < 200; i++)
+            {
+                rb.velocity = Vector3.zero * 0.1f;
+                yield return new WaitForFixedUpdate();
+            }
+        }
 
     }
 
