@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MenuController : MonoBehaviour
 {
-    public void LoadLovel1()
+    public void LoadLevel1()
     {
         Loadinglndicator.Instance.LoadScene("Level1");
     }
