@@ -31,6 +31,6 @@ public class EnemyShootingController : MonoBehaviour
     private void Shoot()
     {
         GameObject newBullet = Instantiate(m_bullet, transform.position + Vector3.up, Quaternion.identity);
-        newBullet.GetComponent<BulletController>().Init(m_data.BulletSpeed);
+        newBullet.GetComponent<BulletController>().Init(m_data.BulletSpeed, true, m_data.AutoAim);
     }
 }

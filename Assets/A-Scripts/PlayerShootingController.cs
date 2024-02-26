@@ -36,7 +36,7 @@ public class shot : MonoBehaviour
     private void Shoot()
     {
         GameObject newBullet = Instantiate(m_bullet, GetComponent<Transform>().position, Quaternion.identity);
-        newBullet.GetComponent<BulletController>().Init(m_bulletSpeed);
+        newBullet.GetComponent<BulletController>().Init(m_bulletSpeed, false, false);
     }
 
 }

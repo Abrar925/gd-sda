@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShootingRate: 5
   BulletSpeed: 20
+  AutoAim: 1
