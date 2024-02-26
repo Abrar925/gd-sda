@@ -6,12 +6,12 @@ public class MenuController : MonoBehaviour
 {
     public void LoadLevel1()
     {
-        Loadinglndicator.Instance.LoadScene("Level1");
+        LoadingIndicator.Instance.LoadScene("Level1");
     }
 
     public void LoadLevel2()
     {
-        Loadinglndicator.Instance.LoadScene("Level2");
+        LoadingIndicator.Instance.LoadScene("Level2");
     }
 
 }

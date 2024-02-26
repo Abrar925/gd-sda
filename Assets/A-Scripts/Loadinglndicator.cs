@@ -5,9 +5,9 @@ using TMPro;
 using UnityEditor;
 using UnityEngine.SceneManagement;
 
-public class Loadinglndicator : MonoBehaviour
+public class LoadingIndicator : MonoBehaviour
 {
-    public static Loadinglndicator Instance;
+    public static LoadingIndicator Instance;
 
     [SerializeField] private TextMeshProUGUI m_text;
 
@@ -22,7 +22,7 @@ public class Loadinglndicator : MonoBehaviour
     {
         gameObject.SetActive(true);
 
-        AsyncOperation op = SceneManager.LoadSceneAsync("name");
+        AsyncOperation op = SceneManager.LoadSceneAsync(name);
         StartCoroutine(WaitLoading(op));
     }
 
