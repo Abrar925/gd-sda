@@ -26,6 +26,7 @@ public class shot : MonoBehaviour
             {
                 InvokeRepeating("Shoot", 0.0f, m_shootingRate);
             }
+
             if (Input.GetKeyUp(KeyCode.Space))
             {
                 CancelInvoke();
