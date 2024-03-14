@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 98599124}
   - component: {fileID: 98599123}
   - component: {fileID: 98599128}
+  - component: {fileID: 98599129}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -249,7 +250,7 @@ Transform:
   m_GameObject: {fileID: 98599122}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.33, y: 4.5, z: -20.7}
+  m_LocalPosition: {x: -1.33, y: 8.74, z: -20.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -268,6 +269,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 0}
+--- !u!111 &98599129
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98599122}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: d3782e12d6d154aebb58e5247f91d7be, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_UpdateMode: 0
+  m_CullingType: 0
 --- !u!1 &655788421
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,6 +297,7 @@ GameObject:
   - component: {fileID: 655788424}
   - component: {fileID: 655788423}
   - component: {fileID: 655788422}
+  - component: {fileID: 655788425}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -304,10 +323,10 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.121568635, g: 0.6720019, b: 0.6901961, a: 0}
+  m_BackGroundColor: {r: 0.121568635, g: 0.6901961, b: 0.6452832, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
-  m_FOVAxisMode: 0
+  m_FOVAxisMode: 1
   m_Iso: 200
   m_ShutterSpeed: 0.005
   m_Aperture: 16
@@ -325,9 +344,9 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.03
   far clip plane: 1000
-  field of view: 60
+  field of view: 39.782738
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -353,13 +372,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 655788421}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.005827942, y: 0.9858594, z: -0.031508524, w: 0.16448246}
-  m_LocalPosition: {x: -8.1, y: 5.8, z: -14.7}
+  m_LocalRotation: {x: -0.0028002383, y: 0.9909346, z: -0.003675795, w: 0.13426562}
+  m_LocalPosition: {x: -8.73, y: 6.7, z: -9.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 3.452, y: 161.018, z: -1.255}
+  m_LocalEulerAnglesHint: {x: 0.374, y: 164.566, z: -0.375}
+--- !u!114 &655788425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655788421}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32fe000b2b1c642f0834c72e144777b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &730988446
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -416,6 +447,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 95841064056441438, guid: 68617247be1cad64d8dfe7e3cbbb3174, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ec5fd29a89702413dbf6582ac1dffe13, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -528,8 +563,9 @@ GameObject:
   - component: {fileID: 1809728441}
   - component: {fileID: 1809728440}
   - component: {fileID: 1809728445}
+  - component: {fileID: 1809728446}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -559,9 +595,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 80
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!136 &1809728441
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -665,6 +701,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 7106037427251402934, guid: ec98b27d183d84f6dafdad226b3b5f02, type: 3}
+--- !u!114 &1809728446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809728439}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7342471dbbdcf474fb017e652858788b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0
+  groundDrag: 0
+  jumpForce: 0
+  jumpCooldown: 0
+  airMultiplier: 0
+  walkSpeed: 0
+  sprintSpeed: 0
+  jumpKey: 32
+  playerHeight: 0
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 0
+  orientation: {fileID: 0}
 --- !u!1 &1816052411
 GameObject:
   m_ObjectHideFlags: 0
