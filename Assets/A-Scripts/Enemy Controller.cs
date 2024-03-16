@@ -11,7 +11,7 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         m_scoreCounter = FindObjectOfType<ScoreCounter>();
-        StartCoroutine(MovementCoroutine());
+        //StartCoroutine(MovementCoroutine());
     }
 
     private IEnumerator MovementCoroutine()

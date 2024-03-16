@@ -6,9 +6,16 @@ public class EnemyShootingController : MonoBehaviour
 {
     [SerializeField] private GameObject m_bullet;
     [SerializeField] private EnemyData m_data;
+    public bool ShootOnStart = true;
 
     // Start is called before the first frame update
     void Start()
+    {
+        if (ShootOnStart)
+            StartShooting();
+    }
+
+    public void StartShooting()
     {
         StartCoroutine(ShootingCoroutine());
     }
