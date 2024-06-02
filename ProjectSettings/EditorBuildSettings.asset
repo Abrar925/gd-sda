@@ -11,5 +11,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/ggg.unity
+    guid: f2fc73ece39c747dab0d46bb097e5369
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

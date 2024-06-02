@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
     public GameObject gamrOverPanel;
+    public GameObject scoresTablePanel;
     public Text scoreText;
+    public TextMeshProUGUI leaderBoardscoreText;
     int score = 0;
 
     private void Awake()
@@ -40,6 +43,7 @@ public class GameManager : MonoBehaviour
         ObstacleSpawner.instance.gameOver = true;
         StopScrolling();
         gamrOverPanel.SetActive(true);
+        scoresTablePanel.SetActive(true);
     }
 
     void StopScrolling()
@@ -56,7 +60,14 @@ public class GameManager : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene("SampleScene");
+
     }
+
+    public void LoadLevel1()
+    {
+        SceneManager.LoadScene("ggg");
+    }
+
 
     public void Menu()
     {
@@ -68,5 +79,6 @@ public class GameManager : MonoBehaviour
     {
         score++;
         scoreText.text = score.ToString();
+        leaderBoardscoreText.text = score.ToString();
     }
 }

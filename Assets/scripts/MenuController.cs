@@ -11,6 +11,11 @@ public class MenuController : MonoBehaviour
         SceneManager.LoadScene("SampleScene");
     }
 
+    public void LoadLevel1()
+    {
+        SceneManager.LoadScene("ggg");
+    }
+
     public void Exit()
     {
         Application.Quit();
