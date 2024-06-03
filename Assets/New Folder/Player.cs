@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
     private SpriteRenderer sr;
+    bool gamrOver = false;
 
     private bool isDead;
     [HideInInspector] public bool playerUnlocked;
@@ -153,4 +154,15 @@ public class Player : MonoBehaviour
     }
 
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Obstacles")
+        {
+            Destroy(collision.gameObject);
+            anim.Play("Death99");
+            GameManager.instance.GameOver();
+            gamrOver = true;
+            //audioManager.PlaySFX(audioManager.death);
+        }
+    }
 }

@@ -57,15 +57,4 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Obstacles")
-        {
-            Destroy(collision.gameObject);
-            anim.Play("Death99");
-            GameManager.instance.GameOver();
-            gamrOver = true;
-            audioManager.PlaySFX(audioManager.death);
-        }
-    }
 }
