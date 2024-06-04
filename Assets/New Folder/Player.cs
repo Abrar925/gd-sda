@@ -103,7 +103,7 @@ public class Player : MonoBehaviour
                 JumpButton();
 
 
-            if (Input.GetKeyDown(KeyCode.LeftShift))
+            if (Input.GetKeyDown(KeyCode.Minus))
                 SlideButton();
 
 

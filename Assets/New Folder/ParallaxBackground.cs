@@ -5,7 +5,8 @@ using UnityEngine;
 public class ParallaxBackground : MonoBehaviour
 {
     private GameObject cam;
-
+    // declare 
+    private SpriteRenderer spriteRenderer;
     [SerializeField] private float parallaxEffect;
 
     private float length;
@@ -13,8 +14,16 @@ public class ParallaxBackground : MonoBehaviour
 
     void Start()
     {
-        cam = GameObject.Find("Main Camera");
 
+        // check if spriteRenderer exists, if not attach it
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
+        if (spriteRenderer == null)
+        {
+            Debug.LogWarning("SpriteRenderer not found on " + gameObject.name + ". Adding one.");
+            spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
+        }
+        cam = GameObject.Find("Main Camera");
         length = GetComponent<SpriteRenderer>().bounds.size.x;
         xPosition = transform.position.x;
 

@@ -1,7 +1,6 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.Events;
-using System;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -15,10 +14,5 @@ public class ScoreManager : MonoBehaviour
     public void SubmitScore()
     {
         submitScoreEvent.Invoke(inputName.text, int.Parse(inputScore.text));
-    }
-
-    internal static void LoadScene(int respawn)
-    {
-        throw new NotImplementedException();
     }
 }

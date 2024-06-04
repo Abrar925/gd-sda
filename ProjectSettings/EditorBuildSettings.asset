@@ -14,5 +14,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ggg.unity
     guid: f2fc73ece39c747dab0d46bb097e5369
-  m_configObjects: {}
-  m_UseUCBPForAssetBundles: 0
+  m_configObjects:
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 205a5554f8c1b42308eab8b83aecb0a0, type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: e94a65a846db34f9c9e2c6630f4fc5e2, type: 2}
