@@ -128,6 +128,7 @@ namespace Dan.Main
                 var response = JsonUtility.FromJson<EntryResponse>($"{{\"entries\":{request.downloadHandler.text}}}");
                 callback?.Invoke(response.entries);
                 LeaderboardCreator.Log("Successfully retrieved leaderboard data!");
+
             }));
         }
         

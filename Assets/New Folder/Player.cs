@@ -99,8 +99,8 @@ public class Player : MonoBehaviour
                 playerUnlocked = true;
 
 
-            if (Input.GetButtonDown("Jump"))
-                JumpButton();
+            if (Input.GetButtonDown("Fire1"))
+                JumpButton(); 
 
 
             if (Input.GetKeyDown(KeyCode.Minus))
